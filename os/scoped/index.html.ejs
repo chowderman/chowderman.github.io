@@ -41,7 +41,7 @@
 
 <body class="surface" ontouchstart>
   <aside>
-    <ul class="tree-view">
+    <ul gui="xp" class="tree-view">
       <li><a href="#intro">Intro</a></li>
       <li>
         <a href="#components">Components</a>
@@ -73,7 +73,7 @@
   <div class="theme-switcher">
     <section class="field-row">
       <label>Select a theme</label>
-      <select id="theme-switcher-select">
+      <select gui="xp" id="theme-switcher-select">
         <option value="XP.css">Windows XP</option>
         <option value="98.css">Windows 98</option>
       </select>
@@ -81,23 +81,23 @@
   </div>
 
   <main>
-    <h1>OS.css</h1>
+    <h1>OS.css (scoped)</h1>
     <hr class="header-hr">
-    <p>OS.css - Windows 95 and XP styled CSS</p>
+    <p>CSS based on old Operating Systems!</p>
 
     <h2 id="intro">Intro</h2>
     <p>
       OS.css is a fork and extension of <a href="https://github.com/botoxparty/XP.css">XP.css</a>
       and <a href="https://github.com/jdan/98.css">98.css</a>. It extends these two libraries by
       adding in missing widgets, adding improved tab functionality, and adding the ability to make
-      windows draggable. It also adds a <a>scoped version</a> of the library adding scoping to all of
+      windows draggable. It also adds a scoped version of the library (this version) adding scoping to all of
       the widgets so that they don't override the default CSS styles, since many widgets in the
       original libraries are unscoped (for example &lt;button&gt;'s default styles are overridden
       in the unscoped version, but won't be overriden in the scoped version unless you add the
       appropriate attributes to the buttons).
     </p>
 
-    <div class="window" style="margin: 32px; width: 250px">
+    <div gui="xp" class="window" style="margin: 32px; width: 250px">
       <div class="title-bar">
         <div class="title-bar-text">
           My First Program
@@ -112,8 +112,8 @@
       <div class="window-body">
         <p>Hello, world!</p>
         <section class="field-row" style="justify-content: flex-end">
-          <button>OK</button>
-          <button>Cancel</button>
+          <button gui="xp">OK</button>
+          <button gui="xp">Cancel</button>
         </section>
       </div>
     </div>
@@ -176,7 +176,7 @@
           They are given 12px of horizontal padding by default.
         </p>
 
-        <%- example(`<button>Click me</button>`) %>
+        <%- example(`<button gui="xp">Click me</button>`) %>
 
         <p>
           When buttons are clicked, the raised borders become sunken.
@@ -186,21 +186,21 @@
         <% /* [[ ... ]] is used to render contents that
               will not appear in the "Show code" section */
         %>
-        <%- example(`<button[[ class="active"]]>I am being pressed</button>`) %>
+        <%- example(`<button gui="xp">I am being pressed</button>`) %>
 
         <p>
           Disabled buttons maintain the same raised border, but have a "washed out"
           appearance in their label.
         </p>
 
-        <%- example(`<button disabled>I cannot be clicked</button>`) %>
+        <%- example(`<button gui="xp" disabled>I cannot be clicked</button>`) %>
 
         <p>
           Button focus is communicated with a dotted border, set 4px within the contents of the button.
           The following example is simulated to be focused.
         </p>
 
-        <%- example(`<button[[ class="focused"]]>I am focused</button>`) %>
+        <%- example(`<button gui="xp">I am focused</button>`) %>
       </div>
     </section>
 
@@ -226,8 +226,8 @@
         </p>
 
         <%- example(`
-          <input type="checkbox" id="example${getNewId()}">
-          <label for="example${getCurrentId()}">This is a checkbox</label>
+          <input gui="xp" type="checkbox" id="example${getNewId()}">
+          <label gui="xp"for="example${getCurrentId()}">This is a checkbox</label>
         `) %>
 
         <p>
@@ -242,16 +242,16 @@
 
         <%- example(`
           <div class="field-row">
-            <input checked type="checkbox" id="example${getNewId()}">
-            <label for="example${getCurrentId()}">I am checked</label>
+            <input gui="xp" checked type="checkbox" id="example${getNewId()}">
+            <label gui="xp"for="example${getCurrentId()}">I am checked</label>
           </div>
           <div class="field-row">
-            <input disabled type="checkbox" id="example${getNewId()}">
-            <label for="example${getCurrentId()}">I am inactive</label>
+            <input gui="xp" disabled type="checkbox" id="example${getNewId()}">
+            <label gui="xp"for="example${getCurrentId()}">I am inactive</label>
           </div>
           <div class="field-row">
-            <input checked disabled type="checkbox" id="example${getNewId()}">
-            <label for="example${getCurrentId()}">I am inactive but still checked</label>
+            <input gui="xp" checked disabled type="checkbox" id="example${getNewId()}">
+            <label gui="xp"for="example${getCurrentId()}">I am inactive but still checked</label>
           </div>
         `) %>
       </div>
@@ -280,12 +280,12 @@
 
         <%- example(`
           <div class="field-row">
-            <input id="radio${getNewId()}" type="radio" name="first-example">
-            <label for="radio${getCurrentId()}">Yes</label>
+            <input gui="xp" id="radio${getNewId()}" type="radio" name="first-example">
+            <label gui="xp"for="radio${getCurrentId()}">Yes</label>
           </div>
           <div class="field-row">
-            <input id="radio${getNewId()}" type="radio" name="first-example">
-            <label for="radio${getCurrentId()}">No</label>
+            <input gui="xp" id="radio${getNewId()}" type="radio" name="first-example">
+            <label gui="xp"for="radio${getCurrentId()}">No</label>
           </div>
         `) %>
 
@@ -296,16 +296,16 @@
 
         <%- example(`
           <div class="field-row">
-            <input id="radio${getNewId()}" type="radio" name="second-example">
-            <label for="radio${getCurrentId()}">Peanut butter should be smooth</label>
+            <input gui="xp" id="radio${getNewId()}" type="radio" name="second-example">
+            <label gui="xp"for="radio${getCurrentId()}">Peanut butter should be smooth</label>
           </div>
           <div class="field-row">
-            <input checked disabled id="radio${getNewId()}" type="radio" name="second-example">
-            <label for="radio${getCurrentId()}">I understand why people like crunchy peanut butter</label>
+            <input gui="xp" checked disabled id="radio${getNewId()}" type="radio" name="second-example">
+            <label gui="xp"for="radio${getCurrentId()}">I understand why people like crunchy peanut butter</label>
           </div>
           <div class="field-row">
-            <input disabled id="radio${getNewId()}" type="radio" name="second-example">
-            <label for="radio${getCurrentId()}">Crunchy peanut butter is good</label>
+            <input gui="xp" disabled id="radio${getNewId()}" type="radio" name="second-example">
+            <label gui="xp"for="radio${getCurrentId()}">Crunchy peanut butter is good</label>
           </div>
         `) %>
       </div>
@@ -320,7 +320,7 @@
               User Experience - Tabs</a></footer>
         </blockquote>
         <%- example(`
-        <section class="tabs" style="max-width: 500px">
+        <section gui="xp" class="tabs" style="max-width: 500px">
           <menu role="tablist" aria-label="Sample Tabs">
             <button role="tab" aria-selected="true" aria-controls="tab-A">Tab A</button>
             <button role="tab" aria-controls="tab-B">Tab B</button>
@@ -339,23 +339,23 @@
           <article role="tabpanel" hidden id="tab-B">
             <h3>More...</h3>
             <p>This tab contains a GroupBox</p>
-            <fieldset>
+            <fieldset gui="xp">
               <legend>Today's mood</legend>
               <div class="field-row">
-                <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
-                <label for="radio${getCurrentId()}">Claire Saffitz</label>
+                <input gui="xp" id="radio${getNewId()}" type="radio" name="fieldset-example2">
+                <label gui="xp"for="radio${getCurrentId()}">Claire Saffitz</label>
               </div>
               <div class="field-row">
-                <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
-                <label for="radio${getCurrentId()}">Brad Leone</label>
+                <input gui="xp" id="radio${getNewId()}" type="radio" name="fieldset-example2">
+                <label gui="xp"for="radio${getCurrentId()}">Brad Leone</label>
               </div>
               <div class="field-row">
-                <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
-                <label for="radio${getCurrentId()}">Chris Morocco</label>
+                <input gui="xp" id="radio${getNewId()}" type="radio" name="fieldset-example2">
+                <label gui="xp"for="radio${getCurrentId()}">Chris Morocco</label>
               </div>
               <div class="field-row">
-                <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
-                <label for="radio${getCurrentId()}">Carla Lalli Music</label>
+                <input gui="xp" id="radio${getNewId()}" type="radio" name="fieldset-example2">
+                <label gui="xp"for="radio${getCurrentId()}">Carla Lalli Music</label>
               </div>
             </fieldset>
           </article>
@@ -386,19 +386,19 @@
         </p>
 
         <%- example(`
-          <fieldset>
+          <fieldset gui="xp">
             <div class="field-row">Select one:</div>
             <div class="field-row">
-              <input id="radio${getNewId()}" type="radio" name="fieldset-example">
-              <label for="radio${getCurrentId()}">Diners</label>
+              <input gui="xp" id="radio${getNewId()}" type="radio" name="fieldset-example">
+              <label gui="xp"for="radio${getCurrentId()}">Diners</label>
             </div>
             <div class="field-row">
-              <input id="radio${getNewId()}" type="radio" name="fieldset-example">
-              <label for="radio${getCurrentId()}">Drive-Ins</label>
+              <input gui="xp" id="radio${getNewId()}" type="radio" name="fieldset-example">
+              <label gui="xp"for="radio${getCurrentId()}">Drive-Ins</label>
             </div>
             <div class="field-row">
-              <input id="radio${getNewId()}" type="radio" name="fieldset-example">
-              <label for="radio${getCurrentId()}">Dives</label>
+              <input gui="xp" id="radio${getNewId()}" type="radio" name="fieldset-example">
+              <label gui="xp"for="radio${getCurrentId()}">Dives</label>
             </div>
           </fieldset>
         `) %>
@@ -409,23 +409,23 @@
         </p>
 
         <%- example(`
-          <fieldset>
+          <fieldset gui="xp">
             <legend>Today's mood</legend>
             <div class="field-row">
-              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
-              <label for="radio${getCurrentId()}">Claire Saffitz</label>
+              <input gui="xp" id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label gui="xp"for="radio${getCurrentId()}">Claire Saffitz</label>
             </div>
             <div class="field-row">
-              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
-              <label for="radio${getCurrentId()}">Brad Leone</label>
+              <input gui="xp" id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label gui="xp"for="radio${getCurrentId()}">Brad Leone</label>
             </div>
             <div class="field-row">
-              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
-              <label for="radio${getCurrentId()}">Chris Morocco</label>
+              <input gui="xp" id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label gui="xp"for="radio${getCurrentId()}">Chris Morocco</label>
             </div>
             <div class="field-row">
-              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
-              <label for="radio${getCurrentId()}">Carla Lalli Music</label>
+              <input gui="xp" id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label gui="xp"for="radio${getCurrentId()}">Carla Lalli Music</label>
             </div>
           </fieldset>
         `) %>
@@ -452,8 +452,8 @@
 
         <%- example(`
           <div class="field-row">
-            <label for="text${getNewId()}">Occupation</label>
-            <input id="text${getCurrentId()}" type="text" />
+            <label gui="xp"for="text${getNewId()}">Occupation</label>
+            <input gui="xp" id="text${getCurrentId()}" type="text" />
           </div>
         `) %>
 
@@ -464,12 +464,12 @@
 
         <%- example(`
           <div class="field-row-stacked" style="width: 200px">
-            <label for="text${getNewId()}">Address (Line 1)</label>
-            <input id="text${getCurrentId()}" type="text" />
+            <label gui="xp"for="text${getNewId()}">Address (Line 1)</label>
+            <input gui="xp" id="text${getCurrentId()}" type="text" />
           </div>
           <div class="field-row-stacked" style="width: 200px">
-            <label for="text${getNewId()}">Address (Line 2)</label>
-            <input id="text${getCurrentId()}" type="text" />
+            <label gui="xp"for="text${getNewId()}">Address (Line 2)</label>
+            <input gui="xp" id="text${getCurrentId()}" type="text" />
           </div>
         `) %>
 
@@ -480,8 +480,8 @@
 
         <%- example(`
           <div class="field-row-stacked" style="width: 200px">
-            <label for="text${getNewId()}">Additional notes</label>
-            <textarea id="text${getCurrentId()}" rows="8"></textarea>
+            <label gui="xp"for="text${getNewId()}">Additional notes</label>
+            <textarea gui="xp" id="text${getCurrentId()}" rows="8"></textarea>
           </div>
         `) %>
       </div>
@@ -505,10 +505,10 @@
 
         <%- example(`
           <div class="field-row" style="width: 300px">
-            <label for="range${getNewId()}">Volume:</label>
-            <label for="range${getNewId()}">Low</label>
-            <input id="range${getCurrentId()}" type="range" min="1" max="11" value="5" />
-            <label for="range${getNewId()}">High</label>
+            <label gui="xp" for="range${getNewId()}">Volume:</label>
+            <label gui="xp" for="range${getNewId()}">Low</label>
+            <input gui="xp" id="range${getCurrentId()}" type="range" min="1" max="11" value="5" />
+            <label gui="xp" for="range${getNewId()}">High</label>
           </div>
         `) %>
 
@@ -525,9 +525,9 @@
 
         <%- example(`
           <div class="field-row">
-            <label for="range${getNewId()}">Cowbell</label>
+            <label gui="xp" for="range${getNewId()}">Cowbell</label>
             <div class="is-vertical">
-              <input id="range${getCurrentId()}" class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
+              <input gui="xp" id="range${getCurrentId()}" class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
             </div>
           </div>
         `) %>
@@ -554,7 +554,7 @@
         </p>
 
         <%- example(`
-          <select>
+          <select gui="xp">
             <option>5 - Incredible!</option>
             <option>4 - Great!</option>
             <option>3 - Pretty good</option>
@@ -570,7 +570,7 @@
         </p>
 
         <%- example(`
-          <select>
+          <select gui="xp">
             <option>5 - Incredible!</option>
             <option>4 - Great!</option>
             <option selected>3 - Pretty good</option>
@@ -617,10 +617,12 @@
         </p>
 
         <%- example(`
-          <div class="title-bar">
-            <div class="title-bar-text">A Title Bar</div>
-            <div class="title-bar-controls">
-              <button aria-label="Close"></button>
+          <div gui="xp" class="window" style="width: 300px">
+            <div class="title-bar">
+              <div class="title-bar-text">A Title Bar</div>
+              <div class="title-bar-controls">
+                <button aria-label="Close"></button>
+              </div>
             </div>
           </div>
         `) %>
@@ -632,22 +634,26 @@
         </p>
 
         <%- example(`
-          <div class="title-bar">
-            <div class="title-bar-text">A Title Bar</div>
-            <div class="title-bar-controls">
-              <button aria-label="Minimize"></button>
-              <button aria-label="Maximize"></button>
-              <button aria-label="Close"></button>
+          <div gui="xp" class="window" style="width: 300px">
+            <div class="title-bar">
+              <div class="title-bar-text">A Title Bar</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
             </div>
           </div>
 
           <br>
 
-          <div class="title-bar">
-            <div class="title-bar-text">A Helpful Bar</div>
-            <div class="title-bar-controls">
-              <button aria-label="Help"></button>
-              <button aria-label="Close"></button>
+          <div gui="xp" class="window" style="width: 300px">
+            <div class="title-bar">
+              <div class="title-bar-text">A Helpful Bar</div>
+              <div class="title-bar-controls">
+                <button aria-label="Help"></button>
+                <button aria-label="Close"></button>
+              </div>
             </div>
           </div>
         `) %>
@@ -673,7 +679,7 @@
         </p>
 
         <%- example(`
-          <div class="window" style="width: 300px">
+          <div gui="xp" class="window" style="width: 300px">
             <div class="title-bar">
               <div class="title-bar-text">A Complete Window</div>
               <div class="title-bar-controls">
@@ -691,7 +697,7 @@
         </p>
 
         <%- example(`
-          <div class="window" style="width: 300px">
+          <div gui="xp" class="window" style="width: 300px">
             <div class="title-bar">
               <div class="title-bar-text">A Window With Stuff In It</div>
               <div class="title-bar-controls">
@@ -707,7 +713,7 @@
         `) %>
 
         <%- example(`
-        <div class="window">
+        <div gui="xp" class="window">
           <div class="title-bar">
             <div class="title-bar-text">Command Prompt</div>
             <div class="title-bar-controls">
@@ -725,7 +731,7 @@
       `) %>
 
         <%- example(`
-        <div class="window" style="width: 400px">
+        <div gui="xp" class="window" style="width: 400px">
           <div class="title-bar">
             <div class="title-bar-text">A Window With Tabs and Groups</div>
             <div class="title-bar-controls">
@@ -735,7 +741,7 @@
             </div>
           </div>
           <div class="window-body">
-            <section class="tabs">
+            <section gui="xp" class="tabs">
               <menu role="tablist">
                 <button aria-selected="true" aria-controls="music">Music</button>
                 <button aria-controls="dogs">Dogs</button>
@@ -743,27 +749,27 @@
               </menu>
               <article role="tabpanel" id="music">
                   <p>Set your listening preferences</p>
-                  <fieldset>
+                  <fieldset gui="xp">
                     <legend>Today's mood</legend>
                     <div class="field-row">
                       <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
-                      <label for="radio${getCurrentId()}">Nicki Minaj</label>
+                      <label gui="xp"for="radio${getCurrentId()}">Nicki Minaj</label>
                     </div>
                     <div class="field-row">
                       <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
-                      <label for="radio${getCurrentId()}">Bell Towers</label>
+                      <label gui="xp"for="radio${getCurrentId()}">Bell Towers</label>
                     </div>
                     <div class="field-row">
                       <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
-                      <label for="radio${getCurrentId()}">The Glamorous Monique</label>
+                      <label gui="xp"for="radio${getCurrentId()}">The Glamorous Monique</label>
                     </div>
                     <div class="field-row">
                       <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
-                      <label for="radio${getCurrentId()}">EN. V</label>
+                      <label gui="xp"for="radio${getCurrentId()}">EN. V</label>
                     </div>
                   </fieldset>
                   <section class="field-row">
-                    <button>Reset Alarm...</button>
+                    <button gui="xp">Reset Alarm...</button>
                     <label>Try this to get some attention</label>
                   </section>
                 </article>
@@ -779,8 +785,8 @@
                 <iframe width="100%" height="200" src="https://www.youtube.com/embed/TODJBQ0tnow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </article>
               <section class="field-row" style="justify-content: flex-end">
-                <button>OK</button>
-                <button>Cancel</button>
+                <button gui="xp">OK</button>
+                <button gui="xp">Cancel</button>
               </section>
             </section>
           </div>
@@ -794,7 +800,7 @@
       </p>
 
       <%- example(`
-      <div class="window" float style="width: 300px; right: 200px">
+      <div gui="xp" class="window" float style="width: 300px; right: 200px">
         <div class="title-bar">
           <div class="title-bar-text">Try dragging this window!</div>
           <div class="title-bar-controls">
@@ -831,7 +837,7 @@
         </p>
 
         <%- example(`
-          <ul class="tree-view">
+          <ul gui="xp" class="tree-view">
             <li>We can put</li>
             <li><strong style="color: purple">✨ Whatever ✨</strong></li>
             <li>We want in here</li>
@@ -849,7 +855,7 @@
         </p>
 
         <%- example(`
-          <ul class="tree-view">
+          <ul gui="xp" class="tree-view">
             <li>Table of Contents</li>
             <li>What is web development?</li>
             <li>
@@ -915,7 +921,7 @@
           with a the <code>class="xp-progress"</code> class added to it.
         </p>
 
-        <%- example(`<progress value="50" max="100"></progress>`) %>
+        <%- example(`<progress gui="xp" value="50" max="100"></progress>`) %>
 
       </div>
     </section>
@@ -936,7 +942,7 @@
           To render a horizontal rule, simply use the <code>&lt;hr&gt;</code> HTML tag
         </p>
 
-        <%- example(`<hr>`) %>
+        <%- example(`<hr gui="xp">`) %>
 
       </div>
     </section>
