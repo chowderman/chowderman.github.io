@@ -1,0 +1,19 @@
+{
+  "name": "xp-paint",
+  "version": "2.0.0",
+  "description": "An Windows XP-based fork of JS Paint",
+  "author": "assemblylanguage",
+  "license": "AGPLv3",
+  "scripts": {
+    "build": "node ./index.js"
+  },
+  "keywords": [
+    "Windows XP",
+    "MS Paint",
+    "Paint"
+  ],
+  "devDependencies": {
+    "fs-extra": "9.0.1",
+    "@assemblylanguage/humble": "2.0.0"
+  }
+}

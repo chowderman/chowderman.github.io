@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "tsc - build",
+      "type": "shell",
+      "command": "npx",
+      "args": [
+          "tsc",
+      ]
+    },
+    {
+      "label": "launch",
+      "type": "shell",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "tsc - build"
+      ]
+    }
+  ]
+}
